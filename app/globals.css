@@ -2,10 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-sidebar-color: #fff;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
