@@ -53,10 +53,13 @@ const skills = {
 
 export default function Skill() {
   return (
-    <div className="min-h-screen flex flex-col items-center py-20 relative overflow-x-hidden transition-colors duration-300 dark:white">
-      <div className="w-full relative h-screen z-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.1)_0%,transparent_75%)]"></div>
-      <div className="absolute z-10 flex flex-col w-full max-w-5xl px-4 items-center">
-        {/* 1. TOP NODE: MY SKILLS */}
+    <div className="min-h-screen flex flex-col items-center py-20 relative overflow-x-hidden transition-colors duration-300 dark:bg-white">
+      {/* 1. BACKGROUND: Now absolute so it doesn't force a strict 100vh height on the parent */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.1)_0%,transparent_75%)] pointer-events-none"></div>
+
+      {/* 2. CONTENT CONTAINER: Now relative (in standard flow). 
+             This allows the parent to dynamically grow as you add more skills! */}
+      <div className="relative z-10 flex flex-col w-full max-w-5xl px-4 items-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -62,28 +62,38 @@ export default function WelcomeLoader() {
     }, interval);
 
     return () => clearInterval(timer);
-  }, []); // <-- Removed the scroll lock logic from here
+  }, []);
 
-  // 2. NEW: The Scroll Lock Effect
+  // 2. DOM Side-Effects: Scroll Lock & Mobile Safari UI Color
   useEffect(() => {
-    if (isLoading) {
-      // Lock scroll while the loader is active
-      document.body.style.overflow = "hidden";
-    } else {
-      // Once isLoading is false, wait 1 second for the doors to finish
-      // sliding open, then restore scrolling to the page.
-      const unlockTimer = setTimeout(() => {
-        document.body.style.overflow = "";
-      }, 1000);
-
-      return () => clearTimeout(unlockTimer);
+    // Locate or inject the meta theme-color tag
+    let metaThemeColor = document.querySelector("meta[name='theme-color']");
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement("meta");
+      metaThemeColor.setAttribute("name", "theme-color");
+      document.head.appendChild(metaThemeColor);
     }
 
-    // Failsafe cleanup
+    if (isLoading) {
+      // Lock scroll and tint native browser UI to match the doors
+      document.body.style.overflow = "hidden";
+      metaThemeColor.setAttribute("content", "#51C29A");
+    } else {
+      // Wait 1000ms for exit animations, then restore scroll and base UI color
+      const cleanupTimer = setTimeout(() => {
+        document.body.style.overflow = "";
+        // IMPORTANT: Change #FFFFFF to your actual site background color (e.g., #0f172a for dark mode)
+        metaThemeColor.setAttribute("content", "#FFFFFF");
+      }, 1000);
+
+      return () => clearTimeout(cleanupTimer);
+    }
+
+    // Failsafe cleanup on unmount
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isLoading]); // <-- This effect specifically watches the isLoading state
+  }, [isLoading]);
 
   return (
     <AnimatePresence>
@@ -100,9 +110,9 @@ export default function WelcomeLoader() {
             className="absolute top-0 left-0 w-full h-1/2 bg-[#51C29A]"
             exit={{ y: "-100%" }}
             transition={{
-              duration: 0.7, // Cut from 0.8s to 0.4s for raw speed
-              ease: [0.85, 0, 0.15, 1] as [number, number, number, number], // A much sharper, faster acceleration curve
-              delay: 0.1, // Reduced delay so they start opening almost immediately
+              duration: 0.7,
+              ease: [0.85, 0, 0.15, 1],
+              delay: 0.1,
             }}
           >
             {/* NAME: Attached exactly to the bottom lip of the top door */}
@@ -133,9 +143,9 @@ export default function WelcomeLoader() {
             className="absolute bottom-0 left-0 w-full h-1/2 bg-[#51C29A]"
             exit={{ y: "100%" }}
             transition={{
-              duration: 0.7, // Cut from 0.8s to 0.4s for raw speed
-              ease: [0.85, 0, 0.15, 1] as [number, number, number, number], // A much sharper, faster acceleration curve
-              delay: 0.1, // Reduced delay so they start opening almost immediately
+              duration: 0.7,
+              ease: [0.85, 0, 0.15, 1],
+              delay: 0.1,
             }}
           >
             {/* SUBTITLE & BAR: Attached exactly to the top lip of the bottom door */}
@@ -148,12 +158,12 @@ export default function WelcomeLoader() {
                   delay: 1.2,
                   ease: [0.2, 0.65, 0.3, 0.9],
                 }}
-                className="text-xs md:text-sm text-white  tracking-[0.2em] "
+                className="text-xs md:text-sm text-white tracking-[0.2em]"
               >
                 Professional Full Stack Developer
               </motion.p>
 
-              {/* LOADING BAR */}
+              {/* LOADING BAR CAN GO HERE */}
             </div>
           </motion.div>
         </motion.div>
