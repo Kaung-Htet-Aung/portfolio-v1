@@ -51,7 +51,7 @@ export default function MobileHomeSection() {
 
       {/* 2. The Photo (Middle of row, Between H2 and P) */}
 
-      <div className="shrink-0 relative flex justify-center items-center">
+      <div className="shrink-0 relative flex justify-center items-center bg-transparent">
         {/* 1. Background Glow Element - Animated with Framer Motion */}
 
         <motion.div
@@ -67,15 +67,15 @@ export default function MobileHomeSection() {
 
             ease: "easeInOut",
           }}
-          className="absolute inset-0 bg-red-400 blur-[100px] rounded-full w-full h-full"
+          className="absolute inset-0 bg-red-400 blur-[100px]  rounded-full w-full h-full"
         />
 
         {/* 2. Photo Container - This container now has normal visibility */}
 
-        <div className="relative z-10 ">
+        <div className="relative z-10 bg-transparent">
           {/* Corrected width and height custom classes for a standing photo */}
 
-          <div className="relative w-64 md:w-72 h-96 md:h-112.5 overflow-hidden">
+          <div className="relative w-64 md:w-72 h-96 bg-transparent md:h-112.5 overflow-hidden">
             <Image
               src="/images/me.webp"
               alt="Kaung Htet Aung"
