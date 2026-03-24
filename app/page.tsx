@@ -16,7 +16,7 @@ import SkillTree from "./_components/sections/Skill";
 export default function Portfolio() {
   return (
     <>
-      {/* <WelcomeLoader /> */}
+      <WelcomeLoader />
 
       <div className="min-h-screen select-none bg-[#0a0a0a] dark:bg-white text-zinc-300 font-sans ">
         <MobileTop />
