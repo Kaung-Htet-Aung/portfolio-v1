@@ -7,7 +7,7 @@ export default function DesktopTop() {
       </div>
       <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border dark:border-zinc-200 dark:bg-zinc-50 border-zinc-800/80 bg-zinc-900/30 text-[10px] sm:text-xs dark:text-zinc-600 text-zinc-300 tracking-wider">
         <span className="w-1.5 h-1.5 rounded-full bg-[#51C29A] animate-pulse"></span>
-        LOCAL TIME (MMT) 11:58
+        (MMT) 11:58
       </div>
       {/* Fixed Timezone to Myanmar Time (MMT) with live indicator */}
     </header>

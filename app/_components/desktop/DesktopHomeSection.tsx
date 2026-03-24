@@ -47,7 +47,7 @@ export default function DesktopHomeSection() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-2">
-          <span className="text-zinc-500 dark:text-zinc-400 font-medium text-sm md:text-base">
+          <span className="text-zinc-400 dark:text-zinc-400 font-medium text-sm md:text-base">
             Feel free to
           </span>
 

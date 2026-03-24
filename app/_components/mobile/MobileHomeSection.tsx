@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 import { motion } from "framer-motion";
 export default function MobileHomeSection() {
   return (
-    <section className="flex flex-col lg:hidden lg:flex-row items-center  justify-center gap-10 md:gap-8 lg:gap-8 mt-12 md:mt-10 mb-24">
+    <section className="flex flex-col lg:hidden lg:flex-row items-center  justify-center gap-10 md:gap-8 lg:gap-8 mt-3 md:mt-10 mb-24">
       {/* 1. The Heading (Left side of row, Top on mobile) */}
 
       <div className="flex flex-col items-end gap-5">
@@ -15,7 +15,7 @@ export default function MobileHomeSection() {
           <h2 className="text-right md:text-right uppercase font-quantito tracking-wide leading-snug">
             {/* Dimmer, slightly smaller greeting */}
 
-            <span className="block text-[#408A71]/80 text-2xl lg:text-3xl mb-1">
+            <span className="block text-[#408A71]/90 text-2xl lg:text-3xl mb-1">
               Hello! I Am
             </span>
 
@@ -32,7 +32,7 @@ export default function MobileHomeSection() {
         <div className="flex items-center justify-end gap-4">
           {/* Softened Microcopy */}
 
-          <span className="text-zinc-400 dark:text-zinc-800 font-light text-sm md:text-base">
+          <span className="text-zinc-300 dark:text-zinc-800 font-light text-sm md:text-base">
             Feel free to
           </span>
 
