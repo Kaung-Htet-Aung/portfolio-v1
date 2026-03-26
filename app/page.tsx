@@ -30,9 +30,9 @@ export default function Portfolio() {
   }, []);
   return (
     <>
+      {hasMouse && <CustomCursor />}
       <WelcomeLoader />
       <div className="min-h-screen select-none bg-[#0a0a0a] dark:bg-white text-zinc-300 font-sans ">
-        {hasMouse && <CustomCursor />}
         <MobileTop />
         <MobileBottom />
         <LeftSidebar />
