@@ -139,7 +139,7 @@ export default function ProjectGallery() {
               </div>
 
               {/* MOBILE VIEW */}
-              <div className="flex lg:hidden flex-col w-[85%] mx-auto mb-8 rounded-md overflow-hidden bg-[#030712] border border-slate-800/50 shadow-2xl relative">
+              <div className="flex lg:hidden flex-col w-[90%] mx-auto mb-8 rounded-md overflow-hidden bg-[#030712] border border-slate-800/50 shadow-2xl relative">
                 <div className="relative w-full aspect-[16/9]">
                   <img
                     src={project.image}
@@ -156,7 +156,7 @@ export default function ProjectGallery() {
                   <h3 className="text-xl font-bold text-slate-100 mb-1.5 tracking-tight leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-slate-400 mb-5 leading-relaxed opacity-90 line-clamp-2">
+                  <p className="text-xs text-slate-400 mb-5 font-quantito leading-relaxed opacity-90 line-clamp-2">
                     {project.description}
                   </p>
 
@@ -239,7 +239,7 @@ export default function ProjectGallery() {
                   {hoveredProject.title}
                 </h4>
 
-                <p className="text-sm text-slate-300 dark:text-slate-600 leading-relaxed font-medium tracking-tight h-[4.5rem]">
+                <p className="text-sm text-slate-300 font-quantito dark:text-slate-600 leading-relaxed font-medium tracking-tight h-[4.5rem]">
                   {hoveredProject.description}
                 </p>
 

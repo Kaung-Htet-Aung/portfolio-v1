@@ -16,6 +16,7 @@ import SkillTree from "./_components/sections/Skill";
 import { useEffect, useState } from "react";
 import CustomCursor from "./CustomCursor";
 import ProjectGallery from "./_components/sections/ProjectGallery";
+import Resume from "./_components/sections/Resume";
 export default function Portfolio() {
   const [hasMouse, setHasMouse] = useState(false);
   useEffect(() => {
@@ -47,6 +48,7 @@ export default function Portfolio() {
           </div>
           <SkillTree />
           <ProjectGallery />
+          <Resume />
         </main>
       </div>
     </>
