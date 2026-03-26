@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function RightSidebar() {
   return (
-    <aside className="fixed right-0 top-0 w-44 h-screen border-l border-zinc-600/40 dark:border-white hidden lg:flex flex-col items-center justify-between py-8 bg-[#0a0a0a] dark:bg-white z-40">
+    <aside className="fixed right-0 top-0 w-44 h-screen border-l border-zinc-600/40 dark:border-white hidden lg:flex flex-col items-center justify-between py-8 bg-black dark:bg-white z-40">
       {/* 1. TOP: Theme Toggle (Closed properly) */}
       <div className="w-20 h-12  flex items-center justify-center">
         <ThemeToggle />

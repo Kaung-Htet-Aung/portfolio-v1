@@ -16,24 +16,10 @@ import SkillTree from "./_components/sections/Skill";
 import { useEffect, useState } from "react";
 import CustomCursor from "./CustomCursor";
 export default function Portfolio() {
-  const [hasMouse, setHasMouse] = useState(false);
-  useEffect(() => {
-    // Requires a device that uses a mouse/trackpad AND can hover
-    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-
-    setHasMouse(mediaQuery.matches);
-
-    const handleMatch = (e: MediaQueryListEvent) => setHasMouse(e.matches);
-
-    // Use modern event listeners (addEventListener is preferred over addListener)
-    mediaQuery.addEventListener("change", handleMatch);
-
-    return () => mediaQuery.removeEventListener("change", handleMatch);
-  }, []);
   return (
     <>
       <WelcomeLoader />
-      {hasMouse && <CustomCursor />}
+      <CustomCursor />
       <div className="min-h-screen select-none bg-[#0a0a0a] dark:bg-white text-zinc-300 font-sans ">
         <MobileTop />
         <MobileBottom />

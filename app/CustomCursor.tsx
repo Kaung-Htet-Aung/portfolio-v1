@@ -1,8 +1,36 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function ParticleCursor() {
+  const [isHoverDevice, setIsHoverDevice] = useState(false);
+
+  useEffect(() => {
+    // 1. Check device capability immediately inside the component
+    const hasHover = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+
+    if (!hasHover) {
+      return; // Exit early. Do not attach mousemove listeners.
+    }
+
+    // 2. If it is a desktop, enable the UI and attach listeners
+    setIsHoverDevice(true);
+
+    const moveCursor = (e: MouseEvent) => {
+      // Your cursor tracking logic here
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
+  }, []);
+
+  // 3. Return null on mobile so the DOM remains clean
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -516,7 +544,7 @@ export default function ParticleCursor() {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
-
+  if (!isHoverDevice) return null;
   return (
     <canvas
       ref={canvasRef}
