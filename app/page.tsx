@@ -11,7 +11,7 @@ import DesktopTop from "./_components/desktop/DesktopTop";
 import DesktopHomeSection from "./_components/desktop/DesktopHomeSection";
 //Loader
 import WelcomeLoader from "./_components/WelcomeLoader";
-import ProjectTeaser from "./_components/sections/ProjectTeaser";
+import ProjectGallery from "./_components/sections/ProjectGallery";
 import SkillTree from "./_components/sections/Skill";
 import { useEffect, useState } from "react";
 import CustomCursor from "./CustomCursor";
@@ -45,6 +45,7 @@ export default function Portfolio() {
             <MobileHomeSection />
           </div>
           <SkillTree />
+          <ProjectGallery />
         </main>
       </div>
     </>
