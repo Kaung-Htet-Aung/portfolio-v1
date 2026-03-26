@@ -15,6 +15,7 @@ import WelcomeLoader from "./_components/WelcomeLoader";
 import SkillTree from "./_components/sections/Skill";
 import { useEffect, useState } from "react";
 import CustomCursor from "./CustomCursor";
+import ProjectGallery from "./_components/sections/ProjectGallery";
 export default function Portfolio() {
   const [hasMouse, setHasMouse] = useState(false);
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function Portfolio() {
             <MobileHomeSection />
           </div>
           <SkillTree />
+          <ProjectGallery />
         </main>
       </div>
     </>
