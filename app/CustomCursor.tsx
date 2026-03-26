@@ -1,23 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function ParticleCursor() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Check if device is touch-enabled
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // 3. Return null on mobile so the DOM remains clean
-
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -531,7 +516,7 @@ export default function ParticleCursor() {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
-  if (isMobile) return null;
+
   return (
     <canvas
       ref={canvasRef}
