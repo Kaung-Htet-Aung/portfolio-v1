@@ -11,7 +11,7 @@ import DesktopTop from "./_components/desktop/DesktopTop";
 import DesktopHomeSection from "./_components/desktop/DesktopHomeSection";
 //Loader
 import WelcomeLoader from "./_components/WelcomeLoader";
-import ProjectTeaser from "./_components/sections/ProjectTeaser";
+import Project from "./_components/sections/ProjectGallery";
 import SkillTree from "./_components/sections/Skill";
 import { useEffect, useState } from "react";
 import CustomCursor from "./CustomCursor";
@@ -30,7 +30,7 @@ export default function Portfolio() {
   }, []);
   return (
     <>
-      <WelcomeLoader />
+      {/* <WelcomeLoader /> */}
       {hasMouse && <CustomCursor />}
       <div className="min-h-screen select-none bg-[#0a0a0a] dark:bg-white text-zinc-300 font-sans ">
         <MobileTop />
@@ -45,6 +45,7 @@ export default function Portfolio() {
             <MobileHomeSection />
           </div>
           <SkillTree />
+          <Project />
         </main>
       </div>
     </>

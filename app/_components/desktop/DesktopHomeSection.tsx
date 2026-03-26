@@ -9,15 +9,15 @@ export default function DesktopHomeSection() {
       <div className="shrink-0 relative flex justify-center items-center">
         <motion.div
           animate={{
-            scale: [1.1, 1.25, 1.5, 1.1],
-            opacity: [0.1, 0.2, 0.15, 0.1],
+            scale: [1.1, 1.25, 1.3, 1.1],
+            opacity: [0.1, 0.15, 0.13, 0.1],
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute inset-0 bg-red-400 blur-[100px] rounded-full w-full h-full"
+          className="absolute inset-0 bg-red-400 dark:bg-amber-500 blur-[100px] rounded-full w-full h-full"
         />
 
         {/* 2. Photo Container - This container now has normal visibility */}

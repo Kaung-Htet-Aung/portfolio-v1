@@ -17,7 +17,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="relative flex items-center w-14 h-8 rounded-full  dark:bg-zinc-200 bg-[#151515] border border-zinc-300 dark:border-zinc-800/80 transition-colors duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#51C29A] overflow-hidden group hover:border-zinc-400 dark:hover:border-zinc-600"
+      className="relative flex items-center w-14 h-8 rounded-full  dark:bg-zinc-200 bg-[#151515] border border-[#51C29A] dark:border-[#408A71] transition-colors duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#51C29A] overflow-hidden group hover:border-zinc-400 dark:hover:border-zinc-600"
       aria-label="Toggle Theme"
     >
       {/* Background Track Icons (Static & Subdued) */}

@@ -5,7 +5,7 @@ import { Github, Linkedin } from "lucide-react";
 export default function LeftSidebar() {
   return (
     <div>
-      <aside className="fixed left-0 top-0 w-44 h-screen border-r border-zinc-600/40 dark:border-white hidden md:flex flex-col items-start pl-12 justify-start gap-20 py-6 bg-[#0a0a0a] dark:bg-white z-40">
+      <aside className="fixed left-0 top-0 w-44 h-screen border-r border-zinc-600/40 dark:border-white hidden md:flex flex-col items-start pl-12 justify-start gap-20 py-6 bg-black dark:bg-white z-40">
         <div className="relative w-12 h-12 aspect-square rounded-full  overflow-hidden border border-zinc-700/50 shadow-sm flex items-center justify-center">
           <Image
             src="/images/logo.png"

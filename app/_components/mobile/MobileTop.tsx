@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ThemeToggle from "../ThemeToggle";
 export const MobileTop = () => {
   return (
