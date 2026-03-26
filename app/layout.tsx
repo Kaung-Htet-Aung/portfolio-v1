@@ -37,8 +37,6 @@ export default function RootLayout({
       className={`${quantico.variable} ${geistMono.variable} ${geistSans.variable} cursor-[url('/images/pointer.png')_12_12,_auto] h-full antialiased bg-black dark:bg-white`}
     >
       <body className="min-h-full flex flex-col ">
-        <CustomCursor />
-
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
