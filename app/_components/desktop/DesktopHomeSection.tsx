@@ -17,7 +17,7 @@ export default function DesktopHomeSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute inset-0 bg-red-400 dark:bg-amber-500 blur-[100px] rounded-full w-full h-full"
+          className="absolute inset-0 bg-red-400  dark:bg-amber-500 blur-[100px] rounded-full w-full h-full"
         />
 
         {/* 2. Photo Container - This container now has normal visibility */}

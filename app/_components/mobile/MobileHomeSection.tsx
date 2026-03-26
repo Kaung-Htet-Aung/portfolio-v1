@@ -60,6 +60,13 @@ export default function MobileHomeSection() {
 
             opacity: [0.1, 0.2, 0.15, 0.1],
           }}
+          transition={{
+            duration: 4,
+
+            repeat: Infinity,
+
+            ease: "easeInOut",
+          }}
           className="absolute inset-0 bg-red-400 blur-[100px]  rounded-full w-full h-full"
         />
 
