@@ -18,12 +18,14 @@ import CustomCursor from "./CustomCursor";
 export default function Portfolio() {
   const [hasMouse, setHasMouse] = useState(false);
   useEffect(() => {
-    // 2. Only runs on the client. Checks if the device has a precise pointer (a mouse)
-    const mediaQuery = window.matchMedia("(pointer: fine)");
+    // Requires a device that uses a mouse/trackpad AND can hover
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+
     setHasMouse(mediaQuery.matches);
 
-    // Optional: Update if they plug in a mouse later
     const handleMatch = (e: MediaQueryListEvent) => setHasMouse(e.matches);
+
+    // Use modern event listeners (addEventListener is preferred over addListener)
     mediaQuery.addEventListener("change", handleMatch);
 
     return () => mediaQuery.removeEventListener("change", handleMatch);
