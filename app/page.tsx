@@ -13,12 +13,26 @@ import DesktopHomeSection from "./_components/desktop/DesktopHomeSection";
 import WelcomeLoader from "./_components/WelcomeLoader";
 import ProjectGallery from "./_components/sections/ProjectGallery";
 import SkillTree from "./_components/sections/Skill";
+import { useEffect, useState } from "react";
+import CustomCursor from "./CustomCursor";
 export default function Portfolio() {
+  const [hasMouse, setHasMouse] = useState(false);
+  useEffect(() => {
+    // 2. Only runs on the client. Checks if the device has a precise pointer (a mouse)
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+    setHasMouse(mediaQuery.matches);
+
+    // Optional: Update if they plug in a mouse later
+    const handleMatch = (e: MediaQueryListEvent) => setHasMouse(e.matches);
+    mediaQuery.addEventListener("change", handleMatch);
+
+    return () => mediaQuery.removeEventListener("change", handleMatch);
+  }, []);
   return (
     <>
       <WelcomeLoader />
-
       <div className="min-h-screen select-none bg-[#0a0a0a] dark:bg-white text-zinc-300 font-sans ">
+        {hasMouse && <CustomCursor />}
         <MobileTop />
         <MobileBottom />
         <LeftSidebar />
