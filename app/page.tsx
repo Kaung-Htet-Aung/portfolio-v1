@@ -11,18 +11,13 @@ import DesktopTop from "./_components/desktop/DesktopTop";
 import DesktopHomeSection from "./_components/desktop/DesktopHomeSection";
 //Loader
 import WelcomeLoader from "./_components/WelcomeLoader";
-import Project from "./_components/sections/ProjectGallery";
+import ProjectGallery from "./_components/sections/ProjectGallery";
 import SkillTree from "./_components/sections/Skill";
 export default function Portfolio() {
   return (
     <>
-<<<<<<< HEAD
-      {/* <WelcomeLoader /> */}
-      {hasMouse && <CustomCursor />}
-=======
       <WelcomeLoader />
 
->>>>>>> parent of 68c1e44 (fix(custom-cursor): optimize cursor cursor performance)
       <div className="min-h-screen select-none bg-[#0a0a0a] dark:bg-white text-zinc-300 font-sans ">
         <MobileTop />
         <MobileBottom />
@@ -36,7 +31,7 @@ export default function Portfolio() {
             <MobileHomeSection />
           </div>
           <SkillTree />
-          <Project />
+          <ProjectGallery />
         </main>
       </div>
     </>

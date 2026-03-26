@@ -53,11 +53,7 @@ const skills = {
 
 export default function Skill() {
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen flex flex-col items-center py-20 pt-0 relative overflow-x-hidden  dark:bg-white">
-=======
     <div className="min-h-screen flex flex-col items-center py-20 relative overflow-x-hidden transition-colors duration-300 dark:bg-white">
->>>>>>> parent of 68c1e44 (fix(custom-cursor): optimize cursor cursor performance)
       {/* 1. BACKGROUND: Now absolute so it doesn't force a strict 100vh height on the parent */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.1)_0%,transparent_75%)] pointer-events-none"></div>
 
