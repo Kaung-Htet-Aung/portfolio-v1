@@ -7,59 +7,63 @@ const skills = {
   frontend: [
     "HTML",
     "CSS",
+    "TAILWIND CSS",
+    "Bootstrap",
+    "Material UI",
+    "FRAMER MOTION",
+    "Figma to code",
     "JAVASCRIPT",
+    "Typescript",
     "REACT",
+    "React Query",
     "NEXT JS",
     "ZUSTAND",
-    "TAILWIND CSS",
-    "FRAMER MOTION",
-    "DOM",
-    "UNIT TEST",
-    "PERFORMANCE OPTIMIZE",
-    "SSR",
+    "Responsive UI/UX Design",
   ],
   backend: [
     "NODE",
-    "BUN",
     "EXPRESS",
     "REST API",
-    "ZOD VALIDATION",
     "JWT/OAUTH",
-    "SQL",
-    "POSTGRES",
+    "MYSQL",
+    "POSTGRESQL",
     "PRISMA ORM",
     "DB MODELING",
-    "STRIPE PAYMENTS",
+    "Redis",
+    "Firebase",
+    "Aws Services",
+    "EC2",
+    "S3",
   ],
   other: [
-    "JAVASCRIPT",
-    "TYPESCRIPT",
+    "Php",
     "PYTHON",
-    "GO",
     "REACT NATIVE",
-    "GIT",
-    "GITHUB",
+    "GIT/GITHUB",
+    "CI/CD(Github Actions)",
+    "GitHub Actions Workflows",
+    "Postman",
     "LINUX",
-    "WORDPRESS",
-    "VPS",
+    "Docker",
+    "Jira",
     "VERCEL",
-    "UX/UI DESIGN",
-    "PRODUCT DESIGN",
-    "FIGMA",
-    "ADOBE XD",
-    "WIREFRAME",
+    "Agile & Scrum methodologies",
+    "Slack",
   ],
 };
 
 export default function Skill() {
   return (
-    <div className="min-h-screen flex flex-col items-center py-20 relative overflow-x-hidden  dark:bg-white">
+    <div
+      className="min-h-screen flex flex-col items-center md:py-20 relative overflow-x-hidden  dark:bg-white"
+      id="skill"
+    >
       {/* 1. BACKGROUND: Now absolute so it doesn't force a strict 100vh height on the parent */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.1)_0%,transparent_75%)] pointer-events-none"></div>
 
       {/* 2. CONTENT CONTAINER: Now relative (in standard flow). 
              This allows the parent to dynamically grow as you add more skills! */}
-      <div className="relative z-10 flex flex-col w-full max-w-5xl px-4 items-center">
+      <div className="relative z-10 flex flex-col w-full max-w-6xl px-4 items-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -166,7 +170,7 @@ function SkillButton({
       whileHover={{ scale: 1.05, y: -2 }}
       className="px-4 py-2 rounded-md border dark:border-stone-200 border-slate-600 dark:bg-white bg-slate-800/90 dark:hover:bg-orange-50 hover:bg-slate-700 dark:hover:border-orange-400 hover:border-blue-400 transition-colors cursor-default shadow-sm"
     >
-      <span className="text-xs md:text-sm font-medium dark:text-stone-700 text-blue-200 tracking-wide transition-colors">
+      <span className="text-xs md:text-sm uppercase font-medium dark:text-stone-700 text-blue-200 tracking-wide transition-colors">
         {children}
       </span>
     </motion.div>

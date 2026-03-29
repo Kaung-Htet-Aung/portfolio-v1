@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export default function DesktopHomeSection() {
   return (
-    <section className="lg:flex flex-col hidden lg:flex-row  items-center  justify-center gap-10 md:gap-8 lg:gap-20 mt-12 md:mt-10 mb-24">
+    <section
+      className="lg:flex flex-col hidden lg:flex-row  items-center  justify-center gap-10 md:gap-8 lg:gap-20 mt-12 md:mt-10 mb-24"
+      id="home"
+    >
       <div className="shrink-0 relative flex justify-center items-center">
         <motion.div
           animate={{
@@ -52,7 +55,7 @@ export default function DesktopHomeSection() {
           </span>
 
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:kaunghtetaung374@gmail.com"
             className="group inline-flex items-center justify-center gap-2.5 px-6 py-2.5 rounded-full border border-[#51C29A]/30 bg-[#51C29A]/10 text-[#51C29A] dark:text-[#51C29A] font-semibold transition-all duration-300 hover:bg-[#51C29A] hover:text-white dark:hover:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#51C29A] focus:ring-offset-2 dark:focus:ring-offset-zinc-900 shadow-sm hover:shadow-[0_0_20px_rgba(81,194,154,0.25)]"
             aria-label="Send an email to Kaung Htet"
           >

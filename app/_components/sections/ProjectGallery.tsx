@@ -7,11 +7,18 @@ import { ArrowRight, Github, ExternalLink } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Project Catalog Management",
-    category: "Full Stack System",
+    title: "Kode Company Website",
+    category: "Frontend Development",
     description:
-      "Enterprise-grade cataloging system built to streamline project lifecycles, resource allocation, and team collaboration.",
-    tech: ["Spring Boot", "React", "TypeScript", "PostgreSQL"],
+      "Built a complete static website from scratch, including responsive UI, smooth animations, and contact form functionality. Implemented smooth animations using Framer Motion, email integration (SMTP/IMAP), Redis-based rate limiting, and automated CI/CD deployment.",
+    tech: [
+      "Next Js",
+      "TypeScript",
+      "Tailwind Css",
+      "Framer Motion",
+      "React Hook Form",
+      "Redis",
+    ],
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     github: "#",
@@ -19,11 +26,25 @@ const projects = [
   },
   {
     id: 2,
-    title: "Online Test Portal",
-    category: "Web Application",
+    title: "Exam Management System (PWA)",
+    category: "Full Stack Development",
     description:
-      "Scalable real-time examination platform featuring automated grading, secure testing environments, and analytics.",
-    tech: ["Next.js", "Node.js", "Prisma", "MySQL"],
+      "Developed a full-stack Progressive Web App for exam management featuring offline support, auto-save, real-time updates via SSE/WebSocket, and background job processing with Redis and BullMQ for result processing and notifications.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Redis",
+      "BullMQ",
+      "WebSocket",
+      "SSE",
+      "TanStack Query",
+      "Zustand",
+    ],
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
     github: "#",
@@ -31,11 +52,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "AYPA Volunteer Portal",
-    category: "Frontend Development",
+    title: "Student and Hostel Management System",
+    category: "Full Stack Development",
     description:
-      "Community platform connecting volunteers with local organizational needs and event schedules.",
-    tech: ["PHP", "Bootstrap", "MySQL"],
+      "Built a full-stack Student and Hostel Management System with React.js, Material UI, Express.js, and MySQL. Enabled management of student accommodation, fines, funds, and messages, with PDF export and real-time request handling between students and Warden.",
+    tech: ["React.js", "Material UI", "MySQL", "Express.js"],
     image:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop",
     github: "#",
@@ -43,11 +64,23 @@ const projects = [
   },
   {
     id: 4,
-    title: "Hostel Management",
-    category: "Dashboard UI",
+    title: "Furniture Ecommerce Website",
+    category: "Full Stack Development",
     description:
-      "Complete administrative dashboard for managing tenant records, billing, and room availability.",
-    tech: ["React", "Express", "Zustand"],
+      "Full-stack Furniture Ecommerce Website with responsive UI, admin product management, background job processing, and state/data management using Zustand and TanStack Query.",
+    tech: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Redis",
+      "BullMQ",
+      "TanStack Query",
+      "Zustand",
+    ],
     image:
       "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1200&auto=format&fit=crop",
     github: "#",
@@ -59,7 +92,10 @@ export default function ProjectGallery() {
   const [hoveredProject, setHoveredProject] = useState(projects[0]);
 
   return (
-    <section className="relative min-h-screen w-full  bg-black dark:bg-white text-slate-200 dark:text-slate-900 py-16 md:py-24 px-4 md:px-12 lg:px-24 font-sans ">
+    <section
+      className="relative min-h-screen w-full  bg-black dark:bg-white text-slate-200 dark:text-slate-900 py-16 md:py-24 px-4 md:px-12 lg:px-24 font-sans "
+      id="work"
+    >
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80rem] h-[50rem] dark:bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.1)_0%,transparent_75%)] " />
@@ -85,59 +121,60 @@ export default function ProjectGallery() {
         <div className="w-full lg:w-2/3 flex flex-col">
           <div className="w-full h-px bg-slate-800/60 dark:bg-slate-200 hidden lg:block" />
           {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              // 1. THE FIX: Changed 'y: 40' to 'x: -50' (starts 50px to the left)
-              initial={{ opacity: 0, x: -50 }}
-              // 2. THE FIX: Changed 'y: 0' to 'x: 0' (slides right into its natural position)
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.15,
-                ease: [0.2, 0.65, 0.3, 0.9],
-              }}
-              onMouseEnter={() => setHoveredProject(project)}
-              onViewportEnter={() => setHoveredProject(project)}
-              className="w-full"
-            >
-              {/* ... the rest of your Desktop and Mobile card code stays exactly the same ... */}
-              {/* DESKTOP VIEW */}
-              <div className="hidden lg:flex group relative py-16 border-b border-slate-800/60 dark:border-slate-200 flex-row items-center justify-between cursor-pointer hover:bg-slate-900/20 dark:hover:bg-slate-100  w-full">
-                <span className="absolute top-16 left-0 text-sm font-mono text-slate-700 dark:text-slate-400 group-hover:text-[#51C29A] ">
-                  0{index + 1}
-                </span>
-
-                <div className="pl-16 flex flex-col gap-2 transform transition-transform duration-500 ease-out group-hover:translate-x-4">
-                  <span className="text-xs font-mono text-slate-500 uppercase tracking-widest group-hover:text-[#51C29A] ">
-                    {project.category}
+            <div key={project.id}>
+              <motion.div
+                key={project.id}
+                // 1. THE FIX: Changed 'y: 40' to 'x: -50' (starts 50px to the left)
+                initial={{ opacity: 0, x: -50 }}
+                // 2. THE FIX: Changed 'y: 0' to 'x: 0' (slides right into its natural position)
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.15,
+                  ease: [0.2, 0.65, 0.3, 0.9],
+                }}
+                onMouseEnter={() => setHoveredProject(project)}
+                onViewportEnter={() => setHoveredProject(project)}
+                className="w-full"
+              >
+                {/* ... the rest of your Desktop and Mobile card code stays exactly the same ... */}
+                {/* DESKTOP VIEW */}
+                <div className="hidden lg:flex group relative py-16 border-b border-slate-800/60 dark:border-slate-200 flex-row items-center justify-between cursor-pointer hover:bg-slate-900/20 dark:hover:bg-slate-100  w-full">
+                  <span className="absolute top-16 left-0 text-sm font-mono text-slate-700 dark:text-slate-400 group-hover:text-[#51C29A] ">
+                    0{index + 1}
                   </span>
-                  <h3 className="text-2xl font-bold text-slate-400 dark:text-slate-700 group-hover:text-slate-100 dark:group-hover:text-slate-900 tracking-tight pr-4">
-                    {project.title}
-                  </h3>
-                </div>
 
-                <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500 ease-out">
-                  <div className="flex gap-2 mr-2">
-                    <a
-                      href={project.github}
-                      className="p-2 text-slate-500 dark:text-slate-400 hover:text-white dark:hover:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 rounded-full transition-all"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                    <a
-                      href={project.live}
-                      className="p-2 text-slate-500 dark:text-slate-400 hover:text-[#51C29A] hover:bg-[#51C29A]/10 rounded-full transition-all"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
+                  <div className="pl-16 flex flex-col gap-2 transform transition-transform duration-500 ease-out group-hover:translate-x-4">
+                    <span className="text-xs font-mono text-slate-500 uppercase tracking-widest group-hover:text-[#51C29A] ">
+                      {project.category}
+                    </span>
+                    <h3 className="text-2xl font-bold text-slate-400 dark:text-slate-700 group-hover:text-slate-100 dark:group-hover:text-slate-900 tracking-tight pr-4">
+                      {project.title}
+                    </h3>
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-slate-700 dark:border-slate-200 group-hover:border-[#51C29A]/50 flex items-center justify-center bg-[#050A15] dark:bg-white transition-colors duration-500 shrink-0 shadow-none dark:shadow-sm">
-                    <ArrowRight className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-[#51C29A] group-hover:-rotate-45 transition-all duration-500 ease-out" />
+
+                  <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500 ease-out">
+                    <div className="flex gap-2 mr-2">
+                      <a
+                        href={project.github}
+                        className="p-2 text-slate-500 dark:text-slate-400 hover:text-white dark:hover:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 rounded-full transition-all"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                      <a
+                        href={project.live}
+                        className="p-2 text-slate-500 dark:text-slate-400 hover:text-[#51C29A] hover:bg-[#51C29A]/10 rounded-full transition-all"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border border-slate-700 dark:border-slate-200 group-hover:border-[#51C29A]/50 flex items-center justify-center bg-[#050A15] dark:bg-white transition-colors duration-500 shrink-0 shadow-none dark:shadow-sm">
+                      <ArrowRight className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-[#51C29A] group-hover:-rotate-45 transition-all duration-500 ease-out" />
+                    </div>
                   </div>
                 </div>
-              </div>
-
+              </motion.div>
               {/* MOBILE VIEW */}
               <div className="flex lg:hidden flex-col w-[90%] mx-auto mb-8 rounded-md overflow-hidden bg-[#030712] border border-slate-800/50 shadow-2xl relative">
                 <div className="relative w-full aspect-[16/9]">
@@ -156,7 +193,7 @@ export default function ProjectGallery() {
                   <h3 className="text-xl font-bold text-slate-100 mb-1.5 tracking-tight leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-slate-400 mb-5 font-quantito leading-relaxed opacity-90 line-clamp-2">
+                  <p className="text-xs text-slate-400 mb-5 font-quantito leading-relaxed opacity-90 ">
                     {project.description}
                   </p>
 
@@ -192,7 +229,7 @@ export default function ProjectGallery() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -239,11 +276,11 @@ export default function ProjectGallery() {
                   {hoveredProject.title}
                 </h4>
 
-                <p className="text-sm text-slate-300 font-quantito dark:text-slate-600 leading-relaxed font-medium tracking-tight h-[4.5rem]">
+                <p className="text-sm text-slate-300 dark:text-slate-600 leading-relaxed font-medium tracking-tight h-[4.5rem]">
                   {hoveredProject.description}
                 </p>
 
-                <div className="flex flex-col gap-3 mt-4">
+                <div className="flex flex-col gap-3 mt-12">
                   <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-widest flex items-center gap-2">
                     <div className="w-4 h-[1px] bg-slate-600 dark:bg-slate-300" />{" "}
                     Core Stack
@@ -252,7 +289,7 @@ export default function ProjectGallery() {
                     {hoveredProject.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-3.5 py-1.5 text-xs font-medium text-slate-200 dark:text-slate-700 bg-slate-800/60 dark:bg-slate-100 border border-slate-700/80 dark:border-slate-200 rounded-md"
+                        className="px-2 py-1.5 text-xs font-medium text-slate-200 dark:text-slate-700 bg-slate-800/60 dark:bg-slate-100 border border-slate-700/80 dark:border-slate-200 rounded-md"
                       >
                         {t}
                       </span>

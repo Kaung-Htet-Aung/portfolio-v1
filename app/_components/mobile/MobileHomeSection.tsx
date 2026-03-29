@@ -39,7 +39,7 @@ export default function MobileHomeSection() {
           {/* High-Contrast, Interactive Button */}
 
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:kaunghtetaung374@gmail.com"
             className="group inline-flex items-center justify-center gap-2.5 px-6 py-2.5 rounded-full border border-[#51C29A]/40 dark:text-[#075338] bg-[#51C29A]/10 text-[#51C29A] font-medium transition-all duration-300 shadow-[0_0_15px_rgba(81,194,154,0.05)] hover:bg-[#51C29A] hover:text-[#0a0a0a] hover:shadow-[0_0_20px_rgba(81,194,154,0.3)]"
           >
             <Mail className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:rotate-[-10deg]" />

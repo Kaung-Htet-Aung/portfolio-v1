@@ -1,8 +1,12 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
+import { AiOutlineMail, AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
+import { usePathname } from "next/navigation";
+import NavItem from "./NavItem";
 export default function LeftSidebar() {
+  const pathname = usePathname();
+
   return (
     <div>
       <aside className="fixed left-0 top-0 w-44 h-screen border-r border-zinc-600/40 dark:border-white hidden md:flex flex-col items-start pl-12 justify-start gap-20 py-6 bg-black dark:bg-white z-40">
@@ -20,93 +24,56 @@ export default function LeftSidebar() {
         </div>
         <div className="flex flex-col">
           <ul className="text-zinc-200 dark:text-zinc-800 flex flex-col gap-4 w-fit font-quantito">
-            <li>
-              <Link
-                href="#work"
-                className="group relative w-20 inline-block transition-colors duration-300 hover:text-[#51C29A]"
-              >
-                Home
-                {/* Animated Underline */}
-                <span className="absolute left-0 -bottom-1 h-0.5 bg-[#51C29A] transition-all duration-300 w-full"></span>
-              </Link>
-            </li>
+            <NavItem href="#home">HOME</NavItem>
 
-            <li>
-              <Link
-                href="#work"
-                className="group relative w-20 inline-block transition-colors duration-300 hover:text-[#51C29A]"
-              >
-                SKILLS
-                {/* Animated Underline */}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#51C29A] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#gallery"
-                className="group relative w-20 inline-block transition-colors duration-300 hover:text-[#51C29A]"
-              >
-                PROJECT
-                {/* Animated Underline */}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#51C29A] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#work"
-                className="group relative w-20 inline-block transition-colors duration-300 hover:text-[#51C29A]"
-              >
-                {/* Animated Underline */}
-                EDUCATION
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#51C29A] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#work"
-                className="group relative w-20 inline-block transition-colors duration-300 hover:text-[#51C29A]"
-              >
-                EXPERIENCE
-                {/* Animated Underline */}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#51C29A] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
+            <NavItem href="#skill">SKILLS</NavItem>
+
+            <NavItem href="#work">PROJECTS</NavItem>
+
+            <NavItem href="#resume">EDUCATION</NavItem>
+
+            <NavItem href="#resume">EXPERIENCE</NavItem>
           </ul>
           <div className="flex  flex-col items-start gap-0.5 mt-8">
             {/* User Button */}
-            <button className="p-3 pl-0 transition-transform duration-300 hover:-translate-y-1 group">
-              <Linkedin
+            <Link
+              href="https://www.linkedin.com/in/kaung-htet-aung-595979233/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 pl-0 transition-transform duration-300 hover:-translate-y-1 group"
+            >
+              <AiFillLinkedin
                 size={24}
                 className="text-zinc-400 group-hover:text-[#51C29A] transition-colors duration-300"
                 fill="currentColor"
               />
-            </button>
+            </Link>
 
             {/* CV Text */}
-            <button className="p-3 pl-0  transition-transform duration-300 hover:-translate-y-1 group">
-              <Github
+            <Link
+              href="https://github.com/Kaung-Htet-Aung"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 pl-0 transition-transform duration-300 hover:-translate-y-1 group"
+            >
+              <AiOutlineGithub
                 size={24}
                 className="text-zinc-400 group-hover:text-[#51C29A] transition-colors duration-300"
                 fill="currentColor"
               />
-            </button>
-            <button className="p-3 pl-0 transition-transform duration-300 hover:-translate-y-1 group">
-              <Linkedin
+            </Link>
+            <Link
+              href="mailto:kaunghtetaung374@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 pl-0  transition-transform duration-300 hover:-translate-y-1 group"
+            >
+              <AiOutlineMail
                 size={24}
                 className="text-zinc-400 group-hover:text-[#51C29A] transition-colors duration-300"
                 fill="currentColor"
               />
-            </button>
-
-            {/* CV Text */}
-            <button className="p-3 pl-0  transition-transform duration-300 hover:-translate-y-1 group">
-              <Github
-                size={24}
-                className="text-zinc-400 group-hover:text-[#51C29A] transition-colors duration-300"
-                fill="currentColor"
-              />
-            </button>
-            {/* Mail Button */}
+            </Link>
           </div>
         </div>
 
