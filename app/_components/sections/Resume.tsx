@@ -15,7 +15,7 @@ export default function Resume() {
     {
       role: "Full-Stack Developer",
       company: "Myanmar OCC Co.,Ltd",
-      duration: "2018 – 2025",
+      duration: "June 2025 – Sep 2026",
       description:
         "Worked on web development projects, building and maintaining internal systems and websites. Improved application performance, fixed bugs, and added new features based on user requirements.",
       isCurrent: false,
