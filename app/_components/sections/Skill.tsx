@@ -55,7 +55,7 @@ const skills = {
 export default function Skill() {
   return (
     <div
-      className="min-h-screen flex flex-col items-center md:py-20 relative overflow-x-hidden  dark:bg-white"
+      className="min-h-screen flex flex-col items-center md:py-20 relative overflow-x-clip dark:bg-white"
       id="skill"
     >
       {/* 1. BACKGROUND: Now absolute so it doesn't force a strict 100vh height on the parent */}

@@ -19,10 +19,9 @@ const projects = [
       "React Hook Form",
       "Redis",
     ],
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/kode.png",
     github: "#",
-    live: "#",
+    live: "https://werkode.com/",
   },
   {
     id: 2,
@@ -45,9 +44,8 @@ const projects = [
       "TanStack Query",
       "Zustand",
     ],
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
-    github: "#",
+    image: "/images/exam.jpg",
+    github: "",
     live: "#",
   },
   {
@@ -57,9 +55,8 @@ const projects = [
     description:
       "Built a full-stack Student and Hostel Management System with React.js, Material UI, Express.js, and MySQL. Enabled management of student accommodation, fines, funds, and messages, with PDF export and real-time request handling between students and Warden.",
     tech: ["React.js", "Material UI", "MySQL", "Express.js"],
-    image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop",
-    github: "#",
+    image: "/images/hostel.png",
+    github: "https://github.com/Kaung-Htet-Aung/pj_show",
     live: "#",
   },
   {
@@ -81,9 +78,8 @@ const projects = [
       "TanStack Query",
       "Zustand",
     ],
-    image:
-      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1200&auto=format&fit=crop",
-    github: "#",
+    image: "/images/furniture.jpeg",
+    github: "https://github.com/Kaung-Htet-Aung/Furniture.git",
     live: "#",
   },
 ];
@@ -93,7 +89,7 @@ export default function ProjectGallery() {
 
   return (
     <section
-      className="relative min-h-screen w-full  bg-black dark:bg-white text-slate-200 dark:text-slate-900 py-16 md:py-24 px-4 md:px-12 lg:px-24 font-sans "
+      className="relative min-h-screen w-full  bg-black dark:bg-white text-slate-200 dark:text-slate-900 pt-28 pb-16 md:py-24 px-4 md:px-12 lg:px-24 font-sans "
       id="work"
     >
       {/* Background Glow */}
@@ -158,12 +154,14 @@ export default function ProjectGallery() {
                     <div className="flex gap-2 mr-2">
                       <a
                         href={project.github}
+                        target="_blank"
                         className="p-2 text-slate-500 dark:text-slate-400 hover:text-white dark:hover:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 rounded-full transition-all"
                       >
                         <Github className="w-5 h-5" />
                       </a>
                       <a
                         href={project.live}
+                        target="_blank"
                         className="p-2 text-slate-500 dark:text-slate-400 hover:text-[#51C29A] hover:bg-[#51C29A]/10 rounded-full transition-all"
                       >
                         <ExternalLink className="w-5 h-5" />
@@ -216,12 +214,14 @@ export default function ProjectGallery() {
                   <div className="flex items-center gap-2 mt-auto">
                     <a
                       href={project.github}
+                      target="_blank"
                       className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 transition-all backdrop-blur-md"
                     >
                       <Github className="w-3.5 h-3.5" /> Code
                     </a>
                     <a
                       href={project.live}
+                      target="_blank"
                       className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-[#51C29A]/10 hover:bg-[#51C29A]/20 border border-[#51C29A]/20 text-[#51C29A] transition-all backdrop-blur-md shadow-[0_0_15px_rgba(81,194,154,0.1)]"
                     >
                       <ExternalLink className="w-3.5 h-3.5" /> Live Site
@@ -257,7 +257,7 @@ export default function ProjectGallery() {
                   animate={{ opacity: 0.9, scale: 1, filter: "blur(0px)" }}
                   exit={{ opacity: 0, scale: 0.95, filter: "blur(15px)" }}
                   transition={{ duration: 0.2, ease: [0.2, 0.65, 0.3, 0.9] }}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-fit"
                 />
               </AnimatePresence>
               <div className="absolute inset-0 bg-[#51C29A]/20 dark:bg-[#51C29A]/10 opacity-90 mix-blend-normal dark:mix-blend-multiply" />

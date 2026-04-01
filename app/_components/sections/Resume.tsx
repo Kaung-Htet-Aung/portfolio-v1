@@ -5,56 +5,56 @@ export default function Resume() {
   const experiences = [
     {
       role: "Full Stack Developer",
-      company: "Kode IT Solutions",
-      duration: "2018-2025",
+      company: "Kode",
+      duration: "Nov 2025 – May 2026",
       description:
-        "Developing and maintaining scalable web applications. Building out responsive front-ends and robust back-end services.",
+        "Developed and maintained scalable web applications using modern technologies. Built responsive user interfaces and implemented secure back-end APIs, collaborating with the team in a remote environment.",
       isCurrent: true,
       workType: "Remote",
     },
     {
-      role: "Volunteer Full-Stack Developer",
-      company: "Advanced Young Professionals Association",
-      duration: "2018-2025",
+      role: "Full-Stack Developer",
+      company: "Myanmar OCC Co.,Ltd",
+      duration: "2018 – 2025",
       description:
-        "Contributed to web development initiatives, creating functional and accessible digital solutions for the organization.",
+        "Worked on web development projects, building and maintaining internal systems and websites. Improved application performance, fixed bugs, and added new features based on user requirements.",
       isCurrent: false,
       workType: "On-site",
     },
     {
       role: "Volunteer Full-Stack Developer",
       company: "Advanced Young Professionals Association",
-      duration: "2018-2025",
+      duration: "June 2020 – Nov 2020",
       description:
-        "Contributed to web development initiatives, creating functional and accessible digital solutions for the organization.",
+        "Volunteered as a full-stack developer to build and maintain the organization's website, helping improve accessibility and user experience.",
       isCurrent: false,
-      workType: "Hybrid",
+      workType: "Remote",
     },
   ];
 
   const education = [
     {
       title: "Bachelor of Computer Science",
-      issuer: "University Of Computer Studies - Magway",
-      date: "2018-2025",
+      issuer: "University of Computer Studies (Magway)",
+      date: "2018 – 2025",
       description:
-        "Focusing on software engineering, data structures, algorithms, and modern web development architectures. Based in Magway, Myanmar.",
+        "Studied core computer science concepts including software engineering, data structures, algorithms, and database systems. Gained practical experience in modern web development and application design.",
       isDegree: true,
     },
     {
-      title: "AWS Certified Developer - Associate",
-      issuer: "Amazon Web Services",
+      title: "AWS Certified Solutions Architect – Associate",
+      issuer: "Docker Myanmar",
       date: "2025",
       description:
-        "Official AWS certification validating expertise in developing and maintaining AWS-based applications.",
+        "Learned to design and deploy scalable, highly available, and fault-tolerant systems on AWS. Covered cloud architecture, security, and best practices for real-world applications.",
       isDegree: false,
     },
     {
-      title: "Advanced React & Next.js",
-      issuer: "Frontend Masters",
-      date: "2024",
+      title: "Full Stack Developer Course",
+      issuer: "Code Cafe Lab",
+      date: "2025",
       description:
-        "Advanced architectural patterns, performance optimization, and server-side rendering.",
+        "Completed an intensive full-stack development program covering HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Node.js, Express.js, Redis, Redux, GraphQL, and Prisma. Built full-stack web applications with modern architectures, REST APIs, authentication, and database integration.",
       isDegree: false,
     },
   ];
