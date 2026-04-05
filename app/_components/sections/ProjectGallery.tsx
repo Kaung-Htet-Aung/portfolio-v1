@@ -21,7 +21,7 @@ const projects = [
     ],
     image: "/images/kode.png",
     github: "#",
-    live: "https://werkode.com/",
+    live: "https://staging.werkode.com/",
   },
   {
     id: 2,
