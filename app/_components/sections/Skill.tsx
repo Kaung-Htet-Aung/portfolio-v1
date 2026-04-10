@@ -63,7 +63,7 @@ export default function Skill() {
 
       {/* 2. CONTENT CONTAINER: Now relative (in standard flow). 
              This allows the parent to dynamically grow as you add more skills! */}
-      <div className="relative z-10 flex flex-col w-full max-w-6xl px-4 items-center">
+      <div className="relative z-10 mt-14 md:mt-0 flex flex-col w-full max-w-6xl px-4 items-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
