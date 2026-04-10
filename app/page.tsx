@@ -42,20 +42,13 @@ export default function Portfolio() {
         <LeftSidebar />
         <RightSidebar />
 
-        {/* ADDED 'relative' to the main container to anchor our z-indexes */}
         <main className="pt-24 pb-28 md:pt-0 md:pb-32 md:ml-44 lg:mr-44 relative">
-          {/* THE MAGIC CSS: 
-              This ensures tall sections (like Projects) can be scrolled fully before sticking, 
-              while short sections stick to the top immediately. It also accounts for your 6rem mobile navbar! */}
           <style
             dangerouslySetInnerHTML={{
               __html: `
-            .stack-card {
-              position: sticky;
-              top: min(6rem, calc(100vh - 100%));
-            }
             @media (min-width: 768px) {
               .stack-card {
+                position: sticky;
                 top: min(0px, calc(100vh - 100%));
               }
             }
@@ -64,9 +57,10 @@ export default function Portfolio() {
           />
 
           {/* ======================================================== */}
-          {/* 1. HOME (Z-0): Stays pinned to the background */}
+          {/* 1. HOME: Normal scroll on mobile, Pinned on desktop */}
           {/* ======================================================== */}
-          <div className="sticky top-24 md:top-0 z-0 flex flex-col h-[calc(100vh-10rem)] dark:h-screen">
+          {/* THE FIX: Changed 'h-[calc...]' to 'min-h-[calc...]' so it stretches to fit all your mobile content! */}
+          <div className="relative md:sticky md:top-0 z-0 flex flex-col min-h-[calc(100vh-10rem)] ">
             <DesktopTop />
             <div className="max-w-300 mx-auto pt-10 px-8 md:px-8 lg:px-14 w-full h-full flex flex-col">
               <DesktopHomeSection />
@@ -75,9 +69,9 @@ export default function Portfolio() {
           </div>
 
           {/* ======================================================== */}
-          {/* 2. SKILL TREE (Z-10): Slides up over Home */}
+          {/* 2. CONTENT: Normal flow on mobile, Slides up on desktop */}
           {/* ======================================================== */}
-          <div className="stack-card z-10 bg-[#0a0a0a] dark:bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.8)] dark:shadow-[0_-20px_50px_rgba(0,0,0,0.1)] overflow-hidden ">
+          <div className="stack-card relative z-10 bg-[#0a0a0a] dark:bg-white md:shadow-[0_-20px_20px_rgba(0,0,0,0.8)] dark:md:shadow-[0_-10px_80px_rgba(0,0,0,0.1)] overflow-hidden">
             <SkillTree />
             <ProjectGallery />
             <Resume />

@@ -62,7 +62,7 @@ export default function Resume() {
   return (
     <section
       // RESTORED: Your exact background choices
-      className="md:py-20 py-16 bg-black dark:bg-amber-50 font-quantito"
+      className="md:py-20 py-8 bg-black dark:bg-amber-50 font-quantito"
       id="resume"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 px-6 md:px-12 lg:px-24 max-w-[90rem] mx-auto">
