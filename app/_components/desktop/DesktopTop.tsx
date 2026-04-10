@@ -34,7 +34,7 @@ export default function DesktopTop() {
       id="home"
     >
       {/* Solution 2: The Watermark Logo */}
-      <div className="hidden md:block text-xs tracking-[0.4em] text-zinc-400 dark:text-zinc-500 dark:hover:text-zinc-900 uppercase hover:text-zinc-200 transition-colors">
+      <div className="hidden md:block text-xs py-14 tracking-[0.4em] text-zinc-400 dark:text-zinc-500 dark:hover:text-zinc-900 uppercase hover:text-zinc-200 transition-colors">
         Kaung Htet Aung
       </div>
 
