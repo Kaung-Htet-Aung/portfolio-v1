@@ -23,7 +23,7 @@ export default function LeftSidebar() {
           />
         </div>
         <div className="flex flex-col">
-          <ul className="text-zinc-200 dark:text-zinc-800 flex flex-col gap-4 w-fit font-quantito">
+          <ul className="text-zinc-200 flex flex-col gap-4 w-fit font-quantito">
             <NavItem href="#home">HOME</NavItem>
 
             <NavItem href="#skill">SKILLS</NavItem>

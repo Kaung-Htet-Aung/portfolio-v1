@@ -28,7 +28,7 @@ export default function NavItem({ href, children }: NavItemProps) {
       <a
         href={href}
         className={`group relative inline-block  w-20 transition-colors duration-300
-        ${isActive ? "text-[#51C29A]" : "text-white hover:text-[#51C29A]"}`}
+        ${isActive ? "text-[#51C29A]" : "text-white dark:text-zinc-800 hover:text-[#51C29A]"}`}
       >
         {children}
         <span
